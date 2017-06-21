@@ -13,7 +13,7 @@
       <ul>
         @foreach ($posts as $post)
           <li>
-            <a href="{{ route('post.show', $post->slug) }}">{{ $post->title }}</a>
+            <a href="{{ route('blog.show', $post->slug) }}">{{ $post->title }}</a>
             <em>({{ $post->published_at->format('M jS Y g:ia') }})</em>
             <p>
               {{ str_limit($post->content) }}

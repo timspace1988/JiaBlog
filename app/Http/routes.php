@@ -11,9 +11,29 @@
 |
 */
 
+//Blog pages
 Route::get('/', function () {
     return redirect('/blog');
 });
 
 Route::get('/blog', 'BlogController@index')->name('blog.index');
-Route::get('/blog/{slug}', 'BlogController@showPost')->name('post.show');
+Route::get('/blog/{slug}', 'BlogController@showPost')->name('blog.show');
+
+//Admin area
+Route::get('/admin', function(){
+    return redirect('/admin/post');
+});
+
+Route::group([
+    'namespace' => 'Admin',
+    'middleware' => 'auth',
+], function(){
+    Route::resource('/admin/post', 'PostController');
+    Route::resource('/admin/tag', 'TagController');
+    Route::get('/admin/upload', 'UploadController@index');
+});
+
+//log in and log out
+Route::get('/auth/login', 'Auth\AuthController@getLogin')->name('login');
+Route::post('/auth/login', 'Auth\AuthController@postLogin')->name('login');
+Route::get('/auth/logout', 'Auth\AuthController@getLogout')->name('logout');
