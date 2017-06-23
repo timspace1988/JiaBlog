@@ -45,7 +45,8 @@ return [
 
         'local' => [
             'driver' => 'local',
-            'root'   => storage_path('app'),
+            //'root'   => storage_path('app'),
+            'root' => public_path('uploads'),//public_path() will set a folder under public directory as root local storage
         ],
 
         'ftp' => [
@@ -64,10 +65,10 @@ return [
 
         's3' => [
             'driver' => 's3',
-            'key'    => 'your-key',
-            'secret' => 'your-secret',
-            'region' => 'your-region',
-            'bucket' => 'your-bucket',
+            'key'    => env('AWS_KEY'),
+            'secret' => env('AWS_SECRET'),
+            'region' => env('AWS_REGION'),
+            'bucket' => env('AWS_BUCKET'),
         ],
 
         'rackspace' => [

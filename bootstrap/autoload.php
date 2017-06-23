@@ -33,4 +33,5 @@ if (file_exists($compiledPath)) {
     require $compiledPath;
 }
 
+//register our helper file created by us
 require __DIR__.'/helpers.php';

@@ -30,7 +30,11 @@ Route::group([
 ], function(){
     Route::resource('/admin/post', 'PostController');
     Route::resource('/admin/tag', 'TagController', ['except' => 'show']);
-    Route::get('/admin/upload', 'UploadController@index');
+    Route::get('/admin/upload', 'UploadController@index')->name('admin.upload.index');
+    Route::post('/admin/upload/file', 'UploadController@uploadFile')->name('admin.upload.file');
+    Route::delete('/admin/upload/file', 'UploadController@deleteFile')->name('admin.delete.file');
+    Route::post('/admin/upload/folder', 'UploadController@createFolder')->name('admin.create.folder');
+    Route::delete('/admin/upload/folder', 'UploadController@deleteFolder')->name('admin.delete.folder');
 });
 
 //log in and log out

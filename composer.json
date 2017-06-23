@@ -8,7 +8,9 @@
         "php": ">=5.5.9",
         "laravel/framework": "5.1.*",
         "michelf/php-markdown": "1.5.*",
-        "michelf/php-smartypants": "1.6.*"
+        "michelf/php-smartypants": "1.6.*",
+        "dflydev/apache-mime-types": "~1.0",
+        "league/flysystem-aws-s3-v3": "~1.0"
     },
     "require-dev": {
         "mockery/mockery": "0.9.*",
