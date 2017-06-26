@@ -13,7 +13,7 @@ use Carbon\Carbon;
 class BlogController extends Controller
 {
     public function index(){
-        $posts = Post::where('published_at', '<=', Carbon::now())
+        $posts = Post::where('published_at', '<=', Carbon::now())//if we set post published in future, it will not be displayed for other user until then
                        ->orderBy('published_at', 'desc')
                        ->paginate(config('blog.posts_per_page'));
 

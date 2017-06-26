@@ -61,7 +61,7 @@ class PostFormFields extends Job implements SelfHandling
         if($this->id){
             $fields = $this->fieldsFromModel($this->id, $fields);
         }else{
-            $when = Carbon::now()->addHour();
+            $when = Carbon::now()->addHour();//add one hour, this means the article is defaultly set published in one hour later
             $fields['publish_date'] = $when->format('M-j-Y');
             $fields['publish_time'] = $when->format('g:i A');
         }

@@ -41,7 +41,7 @@ class PostCreateRequest extends Request
      * This function make it easy to pull all the data from the request to fill a new Post model with
      */
     public function postFillData(){
-        $published_at = new Carbon($this->publish_date . ' ' . $this->publish_time);
+        $published_at = new Carbon($this->publish_date . ' ' . $this->publish_time);//combine our publish_date and publish_time got from view
 
         return [
             'title' => $this->title,
