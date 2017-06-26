@@ -68,6 +68,8 @@ class Post extends Model
 
     /**
      * Recursive routine to set a unique slug
+     * This is prety useful as we use title words(http://xxxxx/word1-word2-word3) as part of url to show a specific blog
+     * (if two articles has same title, the url will be title and title-1)
      *
      * @param string $title
      * @param string $extra
@@ -77,7 +79,7 @@ class Post extends Model
 
         //ensure the slug value of this object(to be stored in database later) is unique
         if(static::whereSlug($slug)->exists()){
-            $this->setUniqueSlug($title, $extra + 1);
+            $this->setUniqueSlug($title, (Integer)$extra + 1);
             return;
         }
 
