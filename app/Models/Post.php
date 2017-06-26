@@ -53,14 +53,15 @@ class Post extends Model
 
     /**
      * Set the title attributes and automatically the slug, just set these attributes for this Post instance, not saved in database yet
-     *
+     * This will be automatically called whenever you assign a value to a Post instance's title property
      *@param string $value
      */
     public function setTitleAttribute($value){
         //the title attribute of this object
         $this->attributes['title'] = $value;
 
-        //if a record respresented by this instance already exists in database, we will not do slug attribute setting for this object
+        //if a record respresented by this instance already exists in database, we have no need to do slug attribute setting for this object
+        //Because this instance already existing only happended in the case we update a post, it should already have a unique slug when it was created
         if(!$this->exists){
             $this->setUniqueSLug($value, '');
         }
