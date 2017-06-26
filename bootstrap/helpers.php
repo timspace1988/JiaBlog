@@ -42,6 +42,30 @@
    * check if mime type is an image,
    *@return boolean
    */
-   function is_image($mimeType){
+    function is_image($mimeType){
        return starts_with($mimeType, 'image/');
-   }
+    }
+
+  /**
+   * Return "checked" if true
+   * This function will be used in views to output the checked attributes in checkbox and radio button
+   */
+  function checked($value){
+      return $value ? 'checked' : '';
+  }
+
+ /**
+  * Return img url for headers ( a full path to an image)
+  */
+ function page_image($value = null){
+     //if no value is given in uploaded area, we directly use the default page_image we set in blog config file
+     if(empty($value)){
+         $value = config('blog.page_image');
+     }
+     //if a value is given in uploaded area, we use 'webpath' data in blog config file to build the full path
+     if(!starts_with($value, 'http') && $value[0] !== '/'){
+         $value = config('blog.uploads.webpath') . '/' . $value;
+     }
+
+     return $value;
+ }

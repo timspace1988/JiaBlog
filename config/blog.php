@@ -8,4 +8,5 @@ return [
         'storage' => 's3',
         'webpath' => getenv('AWS_URL'),//'https://s3.us-east-2.amazonaws.com/jiablog',
     ],
+    'page_image' => '*',
 ];
