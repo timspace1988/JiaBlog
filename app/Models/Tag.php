@@ -45,4 +45,19 @@ class Tag extends Model
              ]);
          }
      }
+
+     /**
+      * Return a specified tag's layout data, which will be used as layout for index of posts(with this tag)
+      *
+      * @param string $tag
+      * @param string $default
+      * @return string
+      */
+     public static function layout($tag, $default = 'blog.layouts.index'){
+         $layout = static::whereTag($tag)->pluck('layout');
+         //pluck('key') retrive all values for a given key from a collection
+         //Sometime a collection has multile records, in this case only one
+
+         return $layout ?: $default;
+     }
 }

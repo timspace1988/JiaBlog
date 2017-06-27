@@ -14,7 +14,7 @@
 //Blog pages
 Route::get('/', function () {
     return redirect('/blog');
-});
+})->name('home');
 
 Route::get('/blog', 'BlogController@index')->name('blog.index');
 Route::get('/blog/{slug}', 'BlogController@showPost')->name('blog.show');

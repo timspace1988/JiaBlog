@@ -60,6 +60,10 @@ var gulp = require('gulp');
 
   gulp.src("vendor/bower_dl/pickadate/lib/compressed/picker.time.js")
       .pipe(gulp.dest("public/assets/pickadate/"));
+
+  // Copy clean-blog less files
+  gulp.src("vendor/bower_dl/clean-blog/less/**")
+      .pipe(gulp.dest("resources/assets/less/clean-blog"));
 });
 
 
@@ -78,7 +82,7 @@ elixir(function(mix) {
     //mix.phpUnit();
        //.sass('app.scss');
 
-    //conbine scripts, the conbined file will be 'public/assets/js/admin.js'
+    //Combine (admin) scripts, the conbined file will be 'public/assets/js/admin.js'
     mix.scripts([
         'js/jquery.js',//these js file are actually copied to resources/assets/js folder by gulp
         'js/bootstrap.js',
@@ -89,7 +93,18 @@ elixir(function(mix) {
       'resources/assets'
     );
 
-    //compile less file, the compiled file will be 'public/assets/css/admin.css'
-    mix.less('admin.less', 'public/assets/css/admin.css');
+    //Combine blog scripts
+    mix.scripts([
+        'js/jquery.js',
+        'js/bootstrap.js',
+        'js/blog.js'
+      ],
+      'public/assets/js/blog.js',
+      'resources/assets'
+    );
 
+    //compile (admin) less file, the compiled file will be 'public/assets/css/admin.css'
+    mix.less('admin.less', 'public/assets/css/admin.css');
+    //compile (blog) less file
+    mix.less('blog.less', 'public/assets/css/blog.css');
 });
