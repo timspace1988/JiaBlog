@@ -27,7 +27,8 @@ class Kernel extends ConsoleKernel
         $schedule->command('inspire')
                  ->hourly();
         // Run once a minute
-        $schedule->command('queue:work')->cron('* * * * * *');
+        $schedule->command('queue:work')->everyMinute();
+        //$schedule->command('queue:work')->cron('* * * * * *');
         //->cron('* * * * * *')Run the task on a custom Cron schedule(here are 6 * signs)
         //as we set Cron to call laravel scheduler every miute, the 'queue:work' will run once a minute
 
