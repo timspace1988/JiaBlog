@@ -18,6 +18,8 @@ class Kernel extends ConsoleKernel
 
     /**
      * Define the application's command schedule.
+     * Note: laravel's scheduler works on the basis of crontab file
+     * On heroku, there is no way to use crontab, so when we run scheduler, no result will be outputed.
      *
      * @param  \Illuminate\Console\Scheduling\Schedule  $schedule
      * @return void
