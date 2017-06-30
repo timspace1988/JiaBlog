@@ -17,6 +17,9 @@
       <ul class="nav navbar-nav">
         <li><a href="{{ route('home') }}">Home</a></li>
       </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="{{ route('contact') }}">Contact</a></li>
+      </ul>
     </div>
   </div>
 </nav>

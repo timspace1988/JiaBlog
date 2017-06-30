@@ -13,4 +13,6 @@ return [
         'storage' => 's3',
         'webpath' => getenv('AWS_URL'),//'https://s3.us-east-2.amazonaws.com/jiablog',
     ],
+    'contact_email' => 'timspace1988@gmail.com',
+    'contact_image' => 'https://s3.us-east-2.amazonaws.com/jiablogheroku/header_images/contact-bg.jpg',
 ];

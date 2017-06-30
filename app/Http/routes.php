@@ -19,6 +19,10 @@ Route::get('/', function () {
 Route::get('/blog', 'BlogController@index')->name('blog.index');
 Route::get('/blog/{slug}', 'BlogController@showPost')->name('blog.show');
 
+//contact us
+Route::get('/contact', 'ContactController@showForm')->name('contact');
+Route::post('/contact', 'ContactController@sendContactInfo')->name('contact');
+
 //Admin area
 Route::get('/admin', function(){
     return redirect('/admin/post');
