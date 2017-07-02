@@ -11,7 +11,8 @@
         "michelf/php-smartypants": "1.6.*",
         "dflydev/apache-mime-types": "~1.0",
         "league/flysystem-aws-s3-v3": "~1.0",
-        "doctrine/dbal": "~2.5"
+        "doctrine/dbal": "~2.5",
+        "suin/php-rss-writer": "^1.5"
     },
     "require-dev": {
         "mockery/mockery": "0.9.*",

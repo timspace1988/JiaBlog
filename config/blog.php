@@ -7,6 +7,7 @@ return [
     'author' => 'Jia Liu',
     'page_image' => 'https://s3.us-east-2.amazonaws.com/jiablogheroku/header_images/home-bg.jpg',
     'posts_per_page' => 10,
+    'rss_size' => 25,
     'uploads' => [
         // 'storage' => 'local',
         // 'webpath' => '/uploads',

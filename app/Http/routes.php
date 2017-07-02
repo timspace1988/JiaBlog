@@ -23,6 +23,12 @@ Route::get('/blog/{slug}', 'BlogController@showPost')->name('blog.show');
 Route::get('/contact', 'ContactController@showForm')->name('contact');
 Route::post('/contact', 'ContactController@sendContactInfo')->name('contact');
 
+//RSS
+Route::get('rss', 'BlogController@rss')->name('rss');
+
+//Site Map
+Route::get('sitemap.xml', 'BlogController@siteMap')->name('sitemap');
+
 //Admin area
 Route::get('/admin', function(){
     return redirect('/admin/post');
